@@ -26,7 +26,7 @@ class Blog(models.Model):
     slug = models.SlugField(max_length=150, unique=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    featuered_image = models.ImageField(upload_to='uploads/%Y/%m/%d', blank=True, null=True)
+    featuered_image = models.ImageField(upload_to='uploads/%Y/%m/%d')
     short_description = models.TextField(max_length=500)
     blog_body = models.TextField()
     status = models.CharField(choices=STATUS_CHOICES, default='Draft')
